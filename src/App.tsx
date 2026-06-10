@@ -13,18 +13,20 @@ import TeamSection from './components/TeamSection';
 import DesignCycle from './components/DesignCycle';
 import DigitalMockups from './components/DigitalMockups';
 import Logo from './components/Logo';
+import DeploymentCenter from './components/DeploymentCenter';
 
 export default function App() {
-  const [activeCategory, setActiveCategory] = useState<'pitch' | 'video' | 'mockups' | 'team'>('pitch');
+  const [activeCategory, setActiveCategory] = useState<'pitch' | 'video' | 'mockups' | 'team' | 'deployment'>('pitch');
 
   const navItems = [
     { id: 'pitch', label: '01. Concept', sectionId: 'pitch-section' },
     { id: 'video', label: '02. Playbook', sectionId: 'video-section' },
     { id: 'mockups', label: '03. Mockups', sectionId: 'mockups-section' },
-    { id: 'team', label: '04. Collaborators', sectionId: 'team-section' }
+    { id: 'team', label: '04. Collaborators', sectionId: 'team-section' },
+    { id: 'deployment', label: '05. Live Deploy', sectionId: 'deployment-section' }
   ] as const;
 
-  const scrollToSection = (id: 'pitch' | 'video' | 'mockups' | 'team', sectionId: string) => {
+  const scrollToSection = (id: 'pitch' | 'video' | 'mockups' | 'team' | 'deployment', sectionId: string) => {
     setActiveCategory(id);
     const element = document.getElementById(sectionId);
     if (element) {
@@ -186,6 +188,17 @@ export default function App() {
             </h3>
           </div>
           <TeamSection />
+        </section>
+
+        {/* Section E: Live Vercel Deployment Hub */}
+        <section id="deployment-section" className="scroll-mt-24 space-y-8">
+          <div className="border-b-3 border-[#111827] pb-4 flex items-center gap-4 font-sans">
+            <span className="text-xl font-mono font-bold text-brand-pink">05.</span>
+            <h3 className="text-3xl font-extrabold uppercase tracking-tight text-[#111827]">
+              LIVE DEPLOYMENT
+            </h3>
+          </div>
+          <DeploymentCenter />
         </section>
 
       </main>
