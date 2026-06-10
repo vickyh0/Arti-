@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Arti - Artist Brand \u0026 Financial Platform",
+  "description": "Public-facing showcase website for Arti, an online platform designed for student artists and small business owners to maintain an online presence and master their financial data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
